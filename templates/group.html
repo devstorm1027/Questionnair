@@ -1,0 +1,34 @@
+{% extends "base.html" %}
+{% block content %}
+    <div class="row">
+        <div class="col-md-6  group-bg">
+            <form action='/view' method='POST' role="form" id="groupform" class="group-from">
+                <h2 class="group-title">Group:</h2>
+                <h3 class="group-id-title">{{value['group_id']}}</h3>
+                {% for v in value['data'] %}
+                    <div class="form-group form-pane">
+                        <label for="que_{{v[0]}}">Question: {{loop.index0 + 1}}</label>
+                        <p class="questions-p">{{v[1]}}</p>
+                    </div>
+                    <div class="form-group form-pane">
+                        <textarea rows="3" cols="50" class="inputform textarea-label" id="answer{{v[0]}}" name="answer_{{v[0]}}" prev_answer = "{{v[3]}}">{{v[3]}}</textarea>
+                        <div class="form-error-message">
+                            <p> This field is required</p>
+                            <p> The value is already existing</p>
+                        </div>
+                    </div>
+                    <div class="form-group form-pane">
+                        <label for="desc{{v[0]}}">More Information:</label>
+                        <p class="inputform">{{v[2]}}</p>
+                    </div>
+                    <div class="form-group form-pane">
+                        <label for="desc{{v[0]}}">Default Values:</label>
+                        <p class="inputform">{{v[6]}}</p>
+                    </div>
+
+                {% endfor %}
+                <button id="group-save" type="submit" class="btn btn-primary btn-info-full btn-size" data-component="button">Save</button></li>
+            </form>
+        </div>
+   </div>
+{% endblock %}

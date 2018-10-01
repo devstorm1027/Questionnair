@@ -1,0 +1,20 @@
+{% extends "base.html" %}
+{% block content %}
+    <div class="row">
+        <div class="col-md-6 bg-color">
+            <div class="group-btn">
+                <!--<div class="group-btn question-title">Questionnaire</div>-->
+                <a href="/questionnaire" class="group_title">Questionnaire</a>
+            </div>
+            <div class="group-btn">
+                <a href="wizard" class="group_title">Wizard</a>
+            </div>
+            {% for v in value %}
+                <div class="group-btn">
+                    <a href="group_{{v}}" class="group_title">Group {{v}}</a>
+                </div>
+            {% endfor %}
+        </div>
+    </div>
+
+{% endblock %}

@@ -1,0 +1,282 @@
+.bg-color{
+    overflow: auto;
+    width: 100%;
+    padding-top: 150px;
+    background: #0b5394;
+    padding-bottom: 150px;
+}
+.group-btn{
+    width: 50%;
+    padding: 10px;
+    margin: 50px auto;
+    background: #feff00;
+    text-align: center;
+}
+.question-title{
+    font-size: 50px;
+    font-weight: bold;
+    font-style: italic;
+    color: #000;
+}
+.group_title {
+    font-size: 45px;
+    color: #000;
+}
+.group_title:hover{
+    color: #000;
+    text-decoration: none;
+}
+.wizard-bg{
+    overflow: auto;
+    width: 100%;
+    padding-top: 100px;
+    padding-bottom: 100px;
+}
+.success-btn {
+    margin: 50px auto;
+    text-align: center;
+}
+
+table {
+    font-family: arial, sans-serif;
+    border-collapse: collapse;
+    width: 100%;
+}
+
+th {
+    border: 1px solid #000;
+    padding: 8px;
+    background-color: #dddddd;
+    text-align: center;
+    font-size: 18px;
+}
+td {
+    border: 1px solid #000;
+    padding: 8px;
+    text-align: center;
+    font-size: 15px;
+}
+
+.group-bg{
+    margin-top: 50px;
+    overflow: auto;
+    width: 100%;
+    padding-top: 100px;
+    background: #f5f5f5;
+    padding-bottom: 100px;
+}
+
+.group-from{
+    margin: auto;
+    width: 75%;
+}
+
+.group-title {
+    margin-bottom: 0px;
+    font-weight: 700
+}
+
+.group-id-title{
+    margin-top: 0px;
+    margin-bottom: 30px
+}
+
+.tab-content {
+    width: 80%;
+    margin: auto;
+}
+.wizard {
+    margin: 20px auto;
+    background: #fff;
+}
+
+    .wizard .nav-tabs {
+        position: relative;
+        margin: 40px auto;
+        margin-bottom: 0;
+        border-bottom-color: #e0e0e0;
+    }
+
+    .wizard > div.wizard-inner {
+        position: relative;
+    }
+
+.connecting-line {
+    height: 2px;
+    background: #e0e0e0;
+    position: absolute;
+    width: 80%;
+    margin: 0 auto;
+    left: 0;
+    right: 0;
+    top: 50%;
+    z-index: 1;
+}
+
+.wizard .nav-tabs > li.active > a, .wizard .nav-tabs > li.active > a:hover, .wizard .nav-tabs > li.active > a:focus {
+    color: #555555;
+    cursor: default;
+    border: 0;
+    border-bottom-color: transparent;
+}
+
+span.round-tab {
+    width: 70px;
+    height: 70px;
+    line-height: 70px;
+    display: inline-block;
+    border-radius: 100px;
+    background: #fff;
+    border: 2px solid #e0e0e0;
+    z-index: 2;
+    position: absolute;
+    left: 0;
+    text-align: center;
+    font-size: 25px;
+    font-weight: bold;
+}
+
+.wizard li.active span.round-tab {
+    background: #5bc0de;
+    border: 2px solid #5bc0de;
+    color: #fff;
+    font-weight: bold;
+}
+
+span.round-tab:hover {
+    color: #333;
+    border: 2px solid #333;
+}
+
+.wizard li:after {
+    content: " ";
+    position: absolute;
+    left: 46%;
+    opacity: 0;
+    margin: 0 auto;
+    bottom: 0px;
+    border: 5px solid transparent;
+    border-bottom-color: #5bc0de;
+    transition: 0.1s ease-in-out;
+}
+
+.wizard li.active:after {
+    content: " ";
+    position: absolute;
+    left: 46%;
+    opacity: 1;
+    margin: 0 auto;
+    bottom: 0px;
+    border: 10px solid transparent;
+    border-bottom-color: #5bc0de;
+}
+
+.wizard .nav-tabs > li a {
+    width: 70px;
+    height: 70px;
+    margin: 20px auto;
+    border-radius: 100%;
+    padding: 0;
+}
+
+.wizard .nav-tabs > li a:hover {
+    background: transparent;
+}
+
+.wizard .tab-pane {
+    position: relative;
+    padding-top: 50px;
+}
+
+.form-pane {
+    font-size: 18px;
+}
+
+.wizard h3 {
+    margin-top: 0;
+}
+
+.textarea-label{
+    display: block;
+}
+.errorBorder {
+    border: 1px solid red;
+}
+.error {
+    display: none;
+}
+
+.form-error-message {
+    position: relative;
+    clear: both;
+    float: none;
+    border-radius: 7px;
+    color: #ff3200;
+    margin-top: 5px;
+}
+
+.form-error-message p{
+    display: none;
+}
+
+.btn-size {
+    font-size: 18px;
+}
+
+.group{
+    display: none;
+}
+
+.question {
+    width: 100%;
+    display: block;
+    border: none;
+}
+
+.question:focus{
+    outline: none;
+}
+
+.final{
+    margin-top: 10px;
+    float: right;
+}
+.btn-export-csv {
+    font-size: 13px
+}
+
+.sub-question {
+    display: none;
+}
+
+.response-edit {
+    border-left-width: 0px;
+    border-right-width: 0px;
+    padding-top: 0px;
+    border-bottom-width: 0px;
+    padding-bottom: 0px;
+    border-top-width: 0px;
+    outline: none;
+    width: 100%;
+}
+
+#edit-button {
+    display: none;
+}
+
+.output-label {
+    display: none
+}
+
+.summary-form{
+    margin: auto;
+    width: 100%;
+}
+
+.summary-header{
+    height: 70px;
+}
+
+.summary-back-btn {
+    margin-right: 5px;
+}

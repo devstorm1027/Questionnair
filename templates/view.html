@@ -1,0 +1,54 @@
+{% extends "base.html" %}
+{% block content %}
+    <div class="row">
+        <div class="col-md-6  wizard-bg">
+            <form action='/view' method='POST' role="form" id="createform" class="summary-form">
+                {% if 'Error' in value['alert'] %}
+                    <div class="alert alert-danger fade in alert-dismissible" style="margin-top:18px;">
+                        <a href="#" class="close" data-dismiss="alert" aria-label="close" title="close">×</a>
+                        {{value['alert']}}
+                    </div>
+                {% else %}
+                    <div class="alert alert-success fade in alert-dismissible" style="margin-top:18px;">
+                        <a href="#" class="close" data-dismiss="alert" aria-label="close" title="close">×</a>
+                        {{value['alert']}}
+                    </div>
+                {% endif %}
+                <table>
+                    <tr class="summary-header">
+                        <th>Group</th>
+                        <th>Question</th>
+                        <th>More Information</th>
+                        <th>Default Values</th>
+                        <th class="output-label">OutPutLabel</th>
+                        <th>Response</th>
+                    </tr>
+                    {% for v in value['data'] %}
+                        <tr>
+                            <td>{{v[4]}}</td>
+                            <td>{{v[1]}}</td>
+                            <td>{{v[2]}}</td>
+                            <td>{{v[6]}}</td>
+                            <td class="output-label">{{value['output_label'][value['data'].index(v)]}}</td>
+                            <td><textarea name="answer_{{v[0]}}" class="response-edit">{{v[3]}}</textarea></td>
+                        </tr>
+                    {% endfor %}
+                </table>
+                <div class="final">
+                    <button id="edit-button" class="btn btn-primary btn-info-full btn-size" data-component="button">Edit</button>
+                </div>
+            </form>
+            <div class="final summary-back-btn">
+                <button id="back" class="btn btn-primary btn-info-full btn-size" data-component="button">Back</button>
+                <button id="export-csv" onclick="exportTableToCSV('Questionnaire.csv')" class="btn btn-success btn-lg btn-export-csv">
+                    <span class="glyphicon glyphicon-download-alt"></span> Export CSV
+                </button>
+                <button id="export-json" onclick="exportTableToJSON('Questionnaire.json')" class="btn btn-success btn-lg btn-export-csv">
+                    <span class="glyphicon glyphicon-download-alt"></span> Export JSON
+                </button>
+            </div>
+
+        </div>
+    </div>
+
+{% endblock %}

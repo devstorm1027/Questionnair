@@ -1,0 +1,108 @@
+{% extends "base.html" %}
+{% block content %}
+	<div class="row">
+		<section>
+        <div class="wizard wizard-bg">
+            <div class="wizard-inner">
+                <div class="connecting-line"></div>
+                <ul class="nav nav-tabs" role="tablist">
+                    {% for v in value %}
+                        {% if value.index(v) == 0 %}
+                            <li role="presentation" class="active">
+                                <a href="#step{{v[0]}}" data-toggle="tab" aria-controls="step{{v[0]}}" role="tab" title="Step {{v[0]}}">
+                                    <span class="round-tab">
+                                        {{v[0]}}
+                                    </span>
+                                </a>
+                            </li>
+                        {% else %}
+                            <li role="presentation" class="disabled">
+                                <a href="#step{{v[0]}}" data-toggle="tab" aria-controls="step{{v[0]}}" role="tab" title="Step {{v[0]}}">
+                                    <span class="round-tab">
+                                        {{v[0]}}
+                                    </span>
+                                </a>
+                            </li>
+                        {% endif %}
+                    {% endfor %}
+
+                    <li role="presentation" class="disabled">
+                        <a href="#complete" data-toggle="tab" aria-controls="complete" role="tab" title="Complete">
+                            <span class="round-tab">
+                                <i class="glyphicon glyphicon-ok"></i>
+                            </span>
+                        </a>
+                    </li>
+                </ul>
+            </div>
+
+            <form action='/' method='POST' role="form" id="createform">
+                <div class="tab-content">
+                    {% for v in value %}
+                        {% if value.index(v) == 0 %}
+                            <div class="tab-pane active" role="tabpanel" id="step{{v[0]}}">
+                                <h2>Step {{v[0]}}</h2>
+                                <div class="form-group form-pane">
+                                    <label for="que_{{v[0]}}">Question {{v[0]}}</label>
+                                    <p>{{v[1]}}</p>
+                                </div>
+                                <div class="form-group form-pane">
+                                    <label for="desc{{v[0]}}">Description {{v[0]}}</label>
+                                    <textarea rows="3" cols="50" class="inputform textarea-label" id="desc{{v[0]}}" name="desc_{{v[0]}}">{{v[2]}}</textarea>
+                                </div>
+                                <button type="button" class="btn btn-primary next-step btn-size">Continue</button>
+                            </div>
+                        {% elif v |length > 7 %}
+                            <div class="tab-pane" role="tabpanel" id="step{{v[0]}}">
+                                <h2>Step {{v[0]}}</h2>
+                                <div class="form-group form-pane">
+                                    <label for="que_{{v[0]}}">Question {{v[0]}}</label>
+                                    <p>{{v[1]}}</p>
+                                </div>
+                                <div class="form-group form-pane">
+                                    <label for="desc{{v[0]}}">Description {{v[0]}}</label>
+                                    <textarea rows="3" cols="50" class="inputform textarea-label" name="desc_{{v[0]}}">{{v[2]}}</textarea>
+                                </div>
+                                {% for x in v[7:] %}
+                                    <div class="form-group form-pane">
+                                        <label for="que_{{v[0]}}">Question {{x[0]}}</label>
+                                        <p>{{x[1]}}</p>
+                                    </div>
+                                    <div class="form-group form-pane">
+                                        <label for="desc{{v[0]}}">Description {{x[0]}}</label>
+                                        <textarea rows="3" cols="50" class="textarea-label input-text" id="desc{{v[0]}}" name="desc_{{x[0]}}">{{x[2]}}</textarea>
+                                    </div>
+                                {% endfor %}
+                                <button type="button" class="btn btn-primary next-step btn-size">Continue</button>
+                            </div>
+                        {% else %}
+                            <div class="tab-pane" role="tabpanel" id="step{{v[0]}}">
+                                <h2>Step {{v[0]}}</h2>
+                                <div class="form-group form-pane">
+                                    <label for="que_{{v[0]}}">Question {{v[0]}}</label>
+                                    <p>{{v[1]}}</p>
+                                </div>
+                                <div class="form-group form-pane">
+                                    <label for="desc{{v[0]}}">Description {{v[0]}}</label>
+                                    <textarea rows="3" cols="50" class="inputform textarea-label" id="desc{{v[0]}}" name="desc_{{v[0]}}">{{v[2]}}</textarea>
+                                </div>
+                                <button type="button" class="btn btn-primary next-step btn-size">Continue</button>
+                            </div>
+                        {% endif %}
+                    {% endfor %}
+                    <div class="tab-pane" role="tabpanel" id="complete">
+                        <h2>Complete</h2>
+                        <div class="form-group form-pane">
+                            <p>You have successfully completed all steps.</p>
+                        </div>
+                        <ul class="list-inline pull-right">
+                            <li><button id="wizard-save" type="submit" class="btn btn-primary btn-info-full btn-size" data-component="button">Submit</button></li>
+                        </ul>
+                    </div>
+                    <div class="clearfix"></div>
+                </div>
+            </form>
+        </div>
+    </section>
+   </div>
+{% endblock %}

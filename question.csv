@@ -1,0 +1,7 @@
+QuestionID,QuestionNarrative,Long Description,OutPutLabel,Question Group,Parent Question,Sample Outputs
+1,What is your name?,“This is typically what you call yourself when speaking with other people”,,1,,Adam
+2,What color is your favorite?,“This is the color that you would choose if given the option”,,1,,Blue
+3,What is your favorite food?,"“What is the general name for the type of food that you like? For example, Mexican, Indian, Sushi, etc”",,2,,French
+4,Do you like to snowboard?,“Answering Yes/No do you like to snowboard?”,,2,,Yes
+4.1,Where is your favorite place to snowboard?,“List the resort”,,2,4,Whistler
+4.2,What was your favorite run?,“List the favorite run at [enter answer from 4.1]”,,2,4.1,Death Match
